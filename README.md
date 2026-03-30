@@ -2,6 +2,8 @@
 
 A [Lynx](https://lynxjs.org) component library for rendering Markdown content using [markdown-it](https://github.com/markdown-it/markdown-it).
 
+<img src="screenshot.png" width="300" />
+
 ## Installation
 
 ```bash
