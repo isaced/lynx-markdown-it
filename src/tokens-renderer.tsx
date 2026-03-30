@@ -163,7 +163,7 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
         elements.push(
           <view key={i} className="md-code-block">
             <text className="md-code-text">
-              {token.content}
+              {token.content.trimEnd()}
             </text>
           </view>
         );
