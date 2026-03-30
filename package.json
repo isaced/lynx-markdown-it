@@ -36,6 +36,7 @@
     "@lynx-js/types": "^3.2.0",
     "@rsbuild/plugin-react": "^1.4.0",
     "@rslib/core": "^0.16.0",
+    "@types/markdown-it": "^14.1.2",
     "@types/node": "^18.19.130",
     "@types/react": "^18.3.0",
     "jsdom": "^29.0.1",

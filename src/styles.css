@@ -1,0 +1,117 @@
+/* Heading styles */
+.md-heading {
+  font-weight: bold;
+  color: #000000;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.md-heading-1 {
+  font-size: 28px;
+}
+
+.md-heading-2 {
+  font-size: 24px;
+}
+
+.md-heading-3 {
+  font-size: 20px;
+}
+
+.md-heading-4,
+.md-heading-5,
+.md-heading-6 {
+  font-size: 18px;
+}
+
+/* Paragraph styles */
+.md-paragraph {
+  font-size: 16px;
+  color: #000000;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+
+/* List styles */
+.md-list {
+  margin-left: 16px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.md-list-item {
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.md-list-bullet {
+  font-size: 16px;
+  color: #000000;
+  margin-right: 8px;
+  margin-top: 2px;
+}
+
+.md-list-number {
+  font-size: 16px;
+  color: #000000;
+  margin-right: 8px;
+  margin-top: 2px;
+  min-width: 20px;
+}
+
+.md-list-text {
+  font-size: 16px;
+  color: #000000;
+  flex: 1;
+  line-height: 24px;
+}
+
+/* Code block styles */
+.md-code-block {
+  background-color: #f6f8fa;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.md-code-text {
+  font-size: 14px;
+  color: #24292e;
+  font-family: monospace;
+  line-height: 20px;
+}
+
+/* Blockquote styles */
+.md-blockquote {
+  border-left-width: 4px;
+  border-left-color: #dfe2e5;
+  border-left-style: solid;
+  padding-left: 12px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.md-blockquote-text {
+  font-size: 16px;
+  color: #6a737d;
+  font-style: italic;
+  line-height: 24px;
+}
+
+/* Horizontal rule styles */
+.md-hr {
+  height: 1px;
+  background-color: #e1e4e8;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Error styles */
+.md-error {
+  font-size: 14px;
+  color: #dc2626;
+}

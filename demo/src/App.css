@@ -2,3 +2,55 @@
   background-color: #000;
   --color-text: #fff;
 }
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+.content-wrapper {
+  padding: 16px;
+  padding-bottom: 32px;
+}
+
+.header-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.header-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.status-wrapper {
+  margin-top: 8px;
+}
+
+.status-text {
+  font-size: 14px;
+  color: #16a34a;
+}
+
+.render-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.render-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+.render-content {
+  border-top: 1px solid #e1e4e8;
+  padding-top: 12px;
+}

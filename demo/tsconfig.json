@@ -6,6 +6,11 @@
 
     "esModuleInterop": true,
     "skipLibCheck": true,
+    
+    "baseUrl": ".",
+    "paths": {
+      "lynx-markdown-it": ["../src/index.tsx"]
+    }
   },
   "references": [
     { "path": "./tsconfig.node.json" },
