@@ -50,22 +50,12 @@
 .md-list-bullet {
   font-size: 16px;
   color: #000000;
-  margin-right: 8px;
-  margin-top: 2px;
+  line-height: 24px;
 }
 
 .md-list-number {
   font-size: 16px;
   color: #000000;
-  margin-right: 8px;
-  margin-top: 2px;
-  min-width: 20px;
-}
-
-.md-list-text {
-  font-size: 16px;
-  color: #000000;
-  flex: 1;
   line-height: 24px;
 }
 

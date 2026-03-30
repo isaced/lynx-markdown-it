@@ -85,8 +85,7 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
             
             listItems.push(
               <view key={j} className="md-list-item">
-                <text className="md-list-bullet">•</text>
-                <text className="md-list-text">{itemText}</text>
+                <text className="md-list-bullet">• {itemText}</text>
               </view>
             );
             j = itemCloseIdx;
@@ -121,8 +120,7 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
             
             listItems.push(
               <view key={j} className="md-list-item">
-                <text className="md-list-number">{itemIndex}.</text>
-                <text className="md-list-text">{itemText}</text>
+                <text className="md-list-number">{itemIndex}. {itemText}</text>
               </view>
             );
             itemIndex++;

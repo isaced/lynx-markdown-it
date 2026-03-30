@@ -8,7 +8,7 @@ import './styles.css';
  */
 export interface MarkdownViewProps {
   /** Markdown content string to render as children */
-  children: string | string[];
+  children: string;
 }
 
 /**
@@ -24,16 +24,7 @@ export interface MarkdownViewProps {
  * ```
  */
 export function MarkdownView({ children }: MarkdownViewProps) {
-  const content = Array.isArray(children) ? children.join('') : children;
-  const { tokens, error } = useMarkdown(content);
-
-  if (error) {
-    return (
-      <view>
-        <text className="md-error">Error: {error}</text>
-      </view>
-    );
-  }
+  const { tokens } = useMarkdown(children);
 
   return (
     <view>
@@ -42,5 +33,4 @@ export function MarkdownView({ children }: MarkdownViewProps) {
   );
 }
 
-export { useMarkdown };
 export type { Token };
