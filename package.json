@@ -1,0 +1,53 @@
+{
+  "name": "lynx-markdown-it",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isaced/lynx-markdown-it.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "isaced"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.jsx",
+  "module": "./dist/index.jsx",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "src/**",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "tsconfig.docs.json",
+    "tsconfig.json",
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "rslib build",
+    "build:watch": "rslib build --watch",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "markdown-it": "^14.1.1"
+  },
+  "devDependencies": {
+    "@lynx-js/react": "^0.117.0",
+    "@lynx-js/types": "^3.2.0",
+    "@rsbuild/plugin-react": "^1.4.0",
+    "@rslib/core": "^0.16.0",
+    "@types/node": "^18.19.130",
+    "@types/react": "^18.3.0",
+    "jsdom": "^29.0.1",
+    "typescript": "^5.7.0"
+  },
+  "peerDependencies": {
+    "@lynx-js/react": ">=0.100.0",
+    "@lynx-js/types": "*",
+    "@types/react": "^18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "jsnext:source": "./src/index.tsx"
+}
