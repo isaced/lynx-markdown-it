@@ -52,7 +52,7 @@ export function App() {
         <view className="render-card">
           <text className="render-title">Rendered Result:</text>
           <view className="render-content">
-            <MarkdownView content={DEMO_MARKDOWN} />
+            <MarkdownView>{DEMO_MARKDOWN}</MarkdownView>
           </view>
         </view>
       </view>

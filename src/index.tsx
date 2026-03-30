@@ -7,23 +7,24 @@ import './styles.css';
  * Props for the MarkdownView component.
  */
 export interface MarkdownViewProps {
-  /** Markdown content string to render */
-  content: string;
+  /** Markdown content string to render as children */
+  children: string | string[];
 }
 
 /**
  * A Lynx component that renders markdown content.
  * 
  * @param props - Component props
- * @param props.content - Markdown content string to render
+ * @param props.children - Markdown content string to render
  * @returns React element rendering the markdown content
  * 
  * @example
  * ```tsx
- * <MarkdownView content="# Hello World" />
+ * <MarkdownView># Hello World</MarkdownView>
  * ```
  */
-export function MarkdownView({ content }: MarkdownViewProps) {
+export function MarkdownView({ children }: MarkdownViewProps) {
+  const content = Array.isArray(children) ? children.join('') : children;
   const { tokens, error } = useMarkdown(content);
 
   if (error) {
