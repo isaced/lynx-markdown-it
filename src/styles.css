@@ -100,6 +100,26 @@
   margin-bottom: 16px;
 }
 
+/* Inline styles */
+.md-bold {
+  font-weight: bold;
+}
+
+.md-italic {
+  font-style: italic;
+}
+
+.md-bold-italic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.md-inline-code {
+  font-family: monospace;
+  background-color: rgba(175, 184, 193, 0.2);
+  font-size: 14px;
+}
+
 /* Error styles */
 .md-error {
   font-size: 14px;

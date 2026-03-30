@@ -2,6 +2,55 @@ import type { Token } from './types';
 import './styles.css';
 
 /**
+ * Renders an array of block-level tokens' inline content with bold/italic support.
+ */
+function renderInline(blockTokens: Token[]): (string | JSX.Element)[] {
+  const result: (string | JSX.Element)[] = [];
+
+  blockTokens.forEach(token => {
+    if (token.type === 'inline' && token.children) {
+      let bold = false;
+      let italic = false;
+
+      token.children.forEach((child, idx) => {
+        switch (child.type) {
+          case 'strong_open':
+            bold = true;
+            break;
+          case 'strong_close':
+            bold = false;
+            break;
+          case 'em_open':
+            italic = true;
+            break;
+          case 'em_close':
+            italic = false;
+            break;
+          case 'text': {
+            if (!bold && !italic) {
+              result.push(child.content);
+            } else {
+              const className = bold && italic ? 'md-bold-italic' : bold ? 'md-bold' : 'md-italic';
+              result.push(<text key={`${token.type}-${idx}`} className={className}>{child.content}</text>);
+            }
+            break;
+          }
+          case 'code_inline':
+            result.push(<text key={`${token.type}-${idx}`} className="md-inline-code">{child.content}</text>);
+            break;
+          case 'softbreak':
+          case 'hardbreak':
+            result.push('\n');
+            break;
+        }
+      });
+    }
+  });
+
+  return result;
+}
+
+/**
  * Props for the RenderTokens component.
  */
 interface RenderTokensProps {
@@ -27,20 +76,13 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
     switch (token.type) {
       case 'heading_open': {
         const level = parseInt(token.tag.slice(1));
-        
+
         const closeIdx = tokens.findIndex((t, idx) => idx > i && t.type === 'heading_close');
         const contentTokens = tokens.slice(i + 1, closeIdx);
-        
-        let textContent = '';
-        contentTokens.forEach(t => {
-          if (t.type === 'inline') {
-            textContent += t.content;
-          }
-        });
-        
+
         elements.push(
           <text key={i} className={`md-heading md-heading-${level}`}>
-            {textContent}
+            {renderInline(contentTokens)}
           </text>
         );
         i = closeIdx + 1;
@@ -50,17 +92,10 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
       case 'paragraph_open': {
         const closeIdx = tokens.findIndex((t, idx) => idx > i && t.type === 'paragraph_close');
         const contentTokens = tokens.slice(i + 1, closeIdx);
-        
-        let textContent = '';
-        contentTokens.forEach(t => {
-          if (t.type === 'inline') {
-            textContent += t.content;
-          }
-        });
-        
+
         elements.push(
           <text key={i} className="md-paragraph">
-            {textContent}
+            {renderInline(contentTokens)}
           </text>
         );
         i = closeIdx + 1;
@@ -70,28 +105,21 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
       case 'bullet_list_open': {
         const closeIdx = tokens.findIndex((t, idx) => idx > i && t.type === 'bullet_list_close');
         const listItems: any[] = [];
-        
+
         for (let j = i + 1; j < closeIdx; j++) {
           if (tokens[j].type === 'list_item_open') {
             const itemCloseIdx = tokens.findIndex((t, idx) => idx > j && t.type === 'list_item_close');
             const itemContentTokens = tokens.slice(j + 1, itemCloseIdx);
-            
-            let itemText = '';
-            itemContentTokens.forEach(t => {
-              if (t.type === 'inline') {
-                itemText += t.content;
-              }
-            });
-            
+
             listItems.push(
               <view key={j} className="md-list-item">
-                <text className="md-list-bullet">• {itemText}</text>
+                <text className="md-list-bullet">• {renderInline(itemContentTokens)}</text>
               </view>
             );
             j = itemCloseIdx;
           }
         }
-        
+
         elements.push(
           <view key={i} className="md-list">
             {listItems}
@@ -105,29 +133,22 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
         const closeIdx = tokens.findIndex((t, idx) => idx > i && t.type === 'ordered_list_close');
         const listItems: any[] = [];
         let itemIndex = 1;
-        
+
         for (let j = i + 1; j < closeIdx; j++) {
           if (tokens[j].type === 'list_item_open') {
             const itemCloseIdx = tokens.findIndex((t, idx) => idx > j && t.type === 'list_item_close');
             const itemContentTokens = tokens.slice(j + 1, itemCloseIdx);
-            
-            let itemText = '';
-            itemContentTokens.forEach(t => {
-              if (t.type === 'inline') {
-                itemText += t.content;
-              }
-            });
-            
+
             listItems.push(
               <view key={j} className="md-list-item">
-                <text className="md-list-number">{itemIndex}. {itemText}</text>
+                <text className="md-list-number">{itemIndex}. {renderInline(itemContentTokens)}</text>
               </view>
             );
             itemIndex++;
             j = itemCloseIdx;
           }
         }
-        
+
         elements.push(
           <view key={i} className="md-list">
             {listItems}
@@ -153,24 +174,11 @@ export const RenderTokens = ({ tokens, startIndex = 0 }: RenderTokensProps) => {
       case 'blockquote_open': {
         const closeIdx = tokens.findIndex((t, idx) => idx > i && t.type === 'blockquote_close');
         const quoteTokens = tokens.slice(i + 1, closeIdx);
-        
-        let quoteText = '';
-        quoteTokens.forEach(t => {
-          if (t.type === 'paragraph_open') {
-            const pCloseIdx = quoteTokens.findIndex((pt, idx) => idx > quoteTokens.indexOf(t) && pt.type === 'paragraph_close');
-            const pContentTokens = quoteTokens.slice(quoteTokens.indexOf(t) + 1, pCloseIdx);
-            pContentTokens.forEach(ct => {
-              if (ct.type === 'inline') {
-                quoteText += ct.content;
-              }
-            });
-          }
-        });
-        
+
         elements.push(
           <view key={i} className="md-blockquote">
             <text className="md-blockquote-text">
-              {quoteText}
+              {renderInline(quoteTokens)}
             </text>
           </view>
         );
