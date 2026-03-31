@@ -1,5 +1,8 @@
 # lynx-markdown-it
 
+[![npm version](https://img.shields.io/npm/v/lynx-markdown-it.svg)](https://www.npmjs.com/package/lynx-markdown-it) [![CI](https://github.com/isaced/lynx-markdown-it/actions/workflows/ci.yml/badge.svg)](https://github.com/isaced/lynx-markdown-it/actions/workflows/ci.yml)
+
+
 A [Lynx](https://lynxjs.org) component library for rendering Markdown content using [markdown-it](https://github.com/markdown-it/markdown-it).
 
 <img src="screenshot.png" width="300" />
