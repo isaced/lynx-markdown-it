@@ -19,14 +19,13 @@
     "README.md",
     "CHANGELOG.md",
     "LICENSE",
-    "tsconfig.docs.json",
     "tsconfig.json",
     "dist/**"
   ],
   "scripts": {
     "build": "rslib build",
     "build:watch": "rslib build --watch",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "markdown-it": "^14.1.1"
@@ -36,11 +35,13 @@
     "@lynx-js/types": "^3.2.0",
     "@rsbuild/plugin-react": "^1.4.0",
     "@rslib/core": "^0.16.0",
+    "@testing-library/jest-dom": "^6.9.1",
     "@types/markdown-it": "^14.1.2",
-    "@types/node": "^18.19.130",
+    "@types/node": "^20.19.37",
     "@types/react": "^18.3.0",
     "jsdom": "^29.0.1",
-    "typescript": "^5.7.0"
+    "typescript": "^5.7.0",
+    "vitest": "^4.1.2"
   },
   "peerDependencies": {
     "@lynx-js/react": ">=0.100.0",

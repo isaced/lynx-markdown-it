@@ -1,0 +1,340 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Snapshot tests > should match snapshot for blockquote 1`] = `
+<page>
+  <view>
+    <view
+      class="md-blockquote"
+    >
+      <wrapper>
+        <text
+          class="md-blockquote-text"
+        >
+          This is a quote
+        </text>
+      </wrapper>
+    </view>
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for bold and italic 1`] = `
+<page>
+  <view>
+    <text
+      class="md-paragraph"
+    >
+      This is 
+      <text
+        class="md-bold"
+      >
+        bold
+      </text>
+       and 
+      <text
+        class="md-italic"
+      >
+        italic
+      </text>
+       text.
+    </text>
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for bullet list 1`] = `
+<page>
+  <view>
+    <view
+      class="md-list"
+    >
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-bullet"
+          >
+            • 
+            <wrapper>
+              item one
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-bullet"
+          >
+            • 
+            <wrapper>
+              item two
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-bullet"
+          >
+            • 
+            <wrapper>
+              item three
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+    </view>
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for code block 1`] = `
+<page>
+  <view>
+    <view
+      class="md-code-block"
+    >
+      <wrapper>
+        <text
+          class="md-code-text"
+        >
+          const x = 1;
+        </text>
+      </wrapper>
+    </view>
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for full document 1`] = `
+<page>
+  <view>
+    <text
+      class="md-heading md-heading-1"
+    >
+      Hello World
+    </text>
+    <text
+      class="md-paragraph"
+    >
+      This is a 
+      <text
+        class="md-bold"
+      >
+        bold
+      </text>
+       and 
+      <text
+        class="md-italic"
+      >
+        italic
+      </text>
+       text demo.
+    </text>
+    <text
+      class="md-heading md-heading-2"
+    >
+      Features
+    </text>
+    <view
+      class="md-list"
+    >
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-bullet"
+          >
+            • 
+            <wrapper>
+              Support heading levels
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-bullet"
+          >
+            • 
+            <wrapper>
+              Support bullet lists
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-bullet"
+          >
+            • 
+            <wrapper>
+              Support 
+              <text
+                class="md-inline-code"
+              >
+                inline code
+              </text>
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+    </view>
+    <view
+      class="md-blockquote"
+    >
+      <wrapper>
+        <text
+          class="md-blockquote-text"
+        >
+          This is a blockquote
+        </text>
+      </wrapper>
+    </view>
+    <view
+      class="md-list"
+    >
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-number"
+          >
+            <wrapper>
+              1
+            </wrapper>
+            . 
+            <wrapper>
+              First item
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-number"
+          >
+            <wrapper>
+              2
+            </wrapper>
+            . 
+            <wrapper>
+              Second item
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+    </view>
+    <view
+      class="md-hr"
+    />
+    <text
+      class="md-paragraph"
+    >
+      End of document.
+    </text>
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for headings 1`] = `
+<page>
+  <view>
+    <text
+      class="md-heading md-heading-1"
+    >
+      Hello World
+    </text>
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for horizontal rule 1`] = `
+<page>
+  <view>
+    <view
+      class="md-hr"
+    />
+  </view>
+</page>
+`;
+
+exports[`Snapshot tests > should match snapshot for ordered list 1`] = `
+<page>
+  <view>
+    <view
+      class="md-list"
+    >
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-number"
+          >
+            <wrapper>
+              1
+            </wrapper>
+            . 
+            <wrapper>
+              first
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-number"
+          >
+            <wrapper>
+              2
+            </wrapper>
+            . 
+            <wrapper>
+              second
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+      <view
+        class="md-list-item"
+      >
+        <wrapper>
+          <text
+            class="md-list-number"
+          >
+            <wrapper>
+              3
+            </wrapper>
+            . 
+            <wrapper>
+              third
+            </wrapper>
+          </text>
+        </wrapper>
+      </view>
+    </view>
+  </view>
+</page>
+`;

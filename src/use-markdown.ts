@@ -14,10 +14,10 @@ interface UseMarkdownResult {
 
 /**
  * Hook to parse markdown content into tokens using markdown-it.
- * 
+ *
  * @param markdown - The markdown content to parse
  * @returns Object containing parsed tokens and error state
- * 
+ *
  * @example
  * ```tsx
  * const { tokens, error } = useMarkdown('# Hello World');
@@ -29,17 +29,13 @@ export function useMarkdown(markdown: string): UseMarkdownResult {
 
   useEffect(() => {
     try {
-      console.log('start parsing markdown:', markdown);
-      
       const md = new MarkdownIt();
       const parsedTokens = md.parse(markdown, {});
-      console.log('parsed tokens:', parsedTokens);
-      
+
       setTokens(parsedTokens);
-      setError('');
-    } catch (e: any) {
-      console.error('error:', e);
-      setError(e?.message || String(e));
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : String(e);
+      setError(message);
     }
   }, [markdown]);
 
